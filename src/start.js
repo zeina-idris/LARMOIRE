@@ -5,6 +5,7 @@ import App from './app'
 import Register from './register'
 import Welcome from './welcome'
 import Login from './login'
+import SingleProductView from './SingleProductView'
 
 const notLoggedIn = (
     <Router history={hashHistory}>
@@ -16,8 +17,9 @@ const notLoggedIn = (
 )
 
 const loggedIn = (
-    <Router history={browserHistory} >
+    <Router history={browserHistory}>
         <Route path="/" component={App} />
+        <Route path='/products/:productId' component={SingleProductView} />
     </Router>
 )
 
