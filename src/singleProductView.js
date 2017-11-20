@@ -15,8 +15,8 @@ export default class SingleProductView extends React.Component{
     render(){
         return(
             <div>
-                <h2>{this.findProduct(this.props.params.productId).title}</h2>
                 <img src={this.findProduct(this.props.params.productId).image} />
+                <h2>{this.findProduct(this.props.params.productId).title}</h2>
             </div>
         )
     }

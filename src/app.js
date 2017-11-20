@@ -8,7 +8,13 @@ export default class App extends React.Component{
     render(){
         return(
             <div>
-                <h2>HEY</h2>
+                <div id='header'>
+                <div className='header_elements'>
+                <li>shop</li>
+                <li>contact</li>
+                <li>about</li>
+                </div>
+                </div>
                 <ProductList />
             </div>
         )
