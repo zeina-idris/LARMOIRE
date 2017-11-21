@@ -1,22 +1,34 @@
 import React from 'react'
-import PRODUCT_DATABASE from './database'
+import axios from 'axios'
 
 export default class SingleProductView extends React.Component{
     constructor(props) {
         super(props)
+        this.state={}
     }
 
-    findProduct(productId){
-        return PRODUCT_DATABASE.find((item) => {
-            return item.id == productId
+    componentDidMount(){
+        axios.get('/product/' + this.props.params.id)
+        .then((r) => {
+            this.setState({
+                product: r.data.product
+            })
         })
     }
 
     render(){
+        if(!this.state.product){
+            return null
+        }
         return(
             <div>
-                <img src={this.findProduct(this.props.params.productId).image} />
-                <h2>{this.findProduct(this.props.params.productId).title}</h2>
+                <div className='SPV'>
+                    <img src={this.state.product.image} />
+                    <div className='SPV_info'>
+                        <h3>{this.state.product.brand} </h3>
+                        <p>{this.state.product.price}€ </p>
+                    </div>
+                </div>
             </div>
         )
     }

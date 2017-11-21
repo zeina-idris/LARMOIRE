@@ -27,10 +27,10 @@ export default class Login extends React.Component{
         return(
             <div id='login'>
             {this.state.error && <p style={{color:"red"}}>Something went wrong</p>}
-                <h1>Log in</h1>
+                <h1 className='login_text'>Log in</h1>
                 <input className='input' type='email' ref='email' placeholder='Email' />
                 <input className='input' type='password' ref='password' placeholder='Password' />
-                <button className='reg-btn' onClick={() => this.submit()}>LOG IN</button>
+                <button  onClick={() => this.submit()}>LOG IN</button>
                 <h3> Not a member? Sign up <Link to="/">here</Link></h3>
             </div>
         )

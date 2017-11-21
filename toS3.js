@@ -5,6 +5,7 @@ if (process.env.NODE_ENV == 'production') {
 } else {
     secrets = require('./secrets'); // secrets.json is in .gitignore
 }
+console.log(secrets);
 const client = knox.createClient({
     key: secrets.awsKey,
     secret: secrets.awsSecret,

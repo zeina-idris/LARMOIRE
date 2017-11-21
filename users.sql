@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS products;
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
@@ -6,4 +7,13 @@ CREATE TABLE users(
     last VARCHAR(300) NOT NULL,
     email VARCHAR(300) NOT NULL UNIQUE,
     password VARCHAR(300) NOT NULL
+);
+
+CREATE TABLE products(
+    id SERIAL PRIMARY KEY,
+    image VARCHAR(300) NOT NULL,
+    userId VARCHAR(255) NOT NULL,
+    brand VARCHAR(255) NOT NULL,
+    price NUMERIC,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

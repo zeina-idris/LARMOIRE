@@ -1,6 +1,7 @@
 import React from 'react';
 import Register from './register'
 import Login from './login'
+import Logo from './logo'
 
 
 export default class Welcome extends React.Component{
@@ -8,7 +9,8 @@ export default class Welcome extends React.Component{
         return(
             <div id="welcome-c">
                 <div id="welcome-cc">
-                    <h1>Welcome Component</h1>
+                <Logo />
+                    <h1></h1>
                     {this.props.children}
                 </div>
             </div>

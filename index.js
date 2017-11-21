@@ -61,9 +61,6 @@ if (process.env.NODE_ENV != 'production') {
 
 
 //ROUTES
-app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html');
-});
 
 app.post('/register', (req, res) => {
     console.log(req.body);
@@ -78,6 +75,7 @@ app.post('/register', (req, res) => {
             } else {
                 const {first, last, email} = req.body;
                 const q = `INSERT INTO users (first, last, email, password) VALUES ($1,$2,$3,$4) RETURNING id;`
+
 
                 bcrypt.hashPassword(req.body.password).then((hash) => {
                     db.query(q, [first, last, email, hash]).then((results) => {
@@ -124,6 +122,75 @@ app.post('/login', function(req, res) {
 });
 
 
+app.get('/welcome', (req, res) => {
+    if (req.session.user) {
+        res.redirect('/')
+    } else {
+        res.sendFile(__dirname + '/index.html')
+    }
+})
+
+
+app.get('/products', (req, res) => {
+    const q = `SELECT * FROM products ORDER BY created_at DESC`
+    db.query(q)
+    .then((result) => {
+        res.json({
+            products: result.rows
+        })
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+})
+
+app.get('/product/:id', (req, res) => {
+    const q = `SELECT image, userId, brand, price FROM products WHERE id = $1`
+    const params = [req.params.id]
+    db.query(q, params)
+    .then((result) => {
+        res.json({
+            product: result.rows[0]
+        })
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+})
+
+app.post('/uploadSingleProduct', uploader.single('file'), (req, res) => {
+    console.log('inside upload route');
+    if (req.file) {
+        sendToS3(req.file)
+        .then(() => {
+            console.log(req.file.filename);
+             const q = 'INSERT INTO products (image, userId, brand, price) VALUES ($1, $2, $3, $4);'
+             const params = [req.file.filename, req.body.userId , req.body.brand, req.body.price]
+             return db.query(q, params)
+             .then(() => {
+                 res.json({
+                    success: true
+                 });
+             })
+        }).catch((err) => {
+            console.log(err);
+        })
+    } else {
+        res.json({
+            success: false
+        });
+    }
+});
+
+
+app.get('/logout', (req, res) =>{
+    req.session = null;
+    res.redirect('/welcome')
+})
+
+app.get('*', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
 
 
 app.listen(8080, function() {

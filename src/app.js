@@ -1,23 +1,42 @@
 import React from 'react'
 import ProductList from './productList'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import DropDownMenu from 'material-ui/DropDownMenu';
+import MenuItem from 'material-ui/MenuItem';
+import MyDropDownMenu from './dropDownMenu'
+import {Link} from 'react-router'
+import Logo from './logo'
+import Wishlist from './wishlist'
 
 export default class App extends React.Component{
     constructor(props){
-        super (props)
+        super(props)
     }
     render(){
+        const clonedChildren = React.cloneElement(
+            this.props.children, {
+                image: "balloons"
+            }
+        )
         return(
             <div>
-                <div id='header'>
-                <div className='header_elements'>
-                <li>shop</li>
-                <li>contact</li>
-                <li>about</li>
-                </div>
-                </div>
-                <ProductList />
+                <MuiThemeProvider>
+                    <div>
+                        <div id='header'>
+                            <div className='header_elements'>
+                                <Logo />
+                                <MyDropDownMenu />
+                                <Wishlist />
+                            </div>
+                        </div>
+                        {clonedChildren}
+                    </div>
+                </MuiThemeProvider>
             </div>
         )
     }
 
 }
+
+
+// <ProductList />

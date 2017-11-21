@@ -8,6 +8,84 @@ body{
 }
 
 
+.register_container{
+    display: block;
+    text-align: center;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.reg-btn:hover{
+    border-bottom: solid 2px #E0BDC2;
+}
+
+
+.inputs_container{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input{
+    display: flex;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 300px;
+    border: solid thin pink;
+    border-radius: 5px;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+    margin: 0 auto;
+    padding: auto;
+    width: 100px;
+    cursor: pointer;
+}
+
+#login button:hover{
+    border-bottom: solid 2px #E0BDC2;
+}
+
+#login{
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+#login .login_text{
+    margin-top: 40px;
+    background-color: transparent;
+    border: none;
+}
+
+#welcome-c h1{
+    background-color: floralWhite;
+    height: 70px;
+    text-align: center;
+    top: 0;
+    left: 0;
+    border-bottom: solid 1px #E0BDC2;
+    margin: 0;
+}
+
+
+#welcome-cc .logo{
+    width: 180px;
+    height: auto;
+    float: left;
+    margin: 0 auto;
+    margin-top: -15px;
+    margin-left: 20px;
+}
+
+
+/*Header Elements*/
 
 #header{
     background-color: floralWhite;
@@ -19,26 +97,59 @@ body{
 }
 
 .header_elements{
-    float: right;
-    padding-right: 10px;
+    display: block;
 }
 
-#header li{
-    list-style: none;
-    display: inline-flex;
-    font-size: 20px;
-    padding: 15px;
-    cursor: pointer;
-    padding-top: 20px;
+.wishlist{
+    display: inline-block;
+    position: relative;
+    left: 28%;
+    width: 220px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: cover;
+    margin-top: -50px;
+    background-color: transparent;
 }
+
+.wishlist:hover{
+    cursor:pointer;
+}
+
+.header_elements .dropDownMenu{
+    float: right;
+    margin-right: 20px;
+}
+
+.header_elements .logo{
+    width: 180px;
+    height: auto;
+    float: left;
+    margin: 0 auto;
+    margin-top: -15px;
+    margin-left: 20px;
+}
+
+
 
 #header li:hover{
     -webkit-font-smoothing: antialiased;
 }
 
+#header a:hover{
+    -webkit-font-smoothing: antialiased;
+}
+
+.upload_img{
+    height: 15px;
+}
+
+
+/*Cards main page*/
 .card_container{
+
     border-radius: 10px;
-    border: solid 1px #E0BDC2;
+    border: solid 4px #E0BDC2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,6 +164,7 @@ body{
     object-fit: cover;
     text-align: center;
 }
+
 .cards_container{
     padding: 20px;
     display: inline-flex;
@@ -60,4 +172,69 @@ body{
     font-size: 15px;
     width: 400px;
     height: 600px;
+}
+
+/*SINGLE PAGE VIEW*/
+.SPV{
+    display: block;
+    text-align: center;
+    width: 900px;
+    margin: 0 auto;
+    height: auto;
+    margin-bottom: 90px;
+
+}
+.SPV img{
+    margin-top: 20px;
+    border-radius: 5px;
+    width: 600px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.SPV_info{
+    margin: 0 auto;
+    border: solid 1px pink;
+    border-radius: 5px;
+    width: 600px;
+}
+
+
+/*upload an image view*/
+.main-upload-c{
+    margin-top: 50px;
+    display: block;
+    text-align: center;
+    margin:  0 auto;
+}
+
+.upload-c{
+    margin-top: 40px;
+}
+
+.upload-c input{
+    display: flex;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 300px;
+    border: solid thin pink;
+    border-radius: 5px;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+.upload-c .upload-btn{
+    cursor: pointer;
+    background-color: #EFC6C9;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.upload-c .upload-btn:hover{
+    background-color: transparent;
+    border-bottom: solid 2px #E0BDC2;
+    border-radius: 0;
 }

@@ -1,11 +1,21 @@
 import React from 'react'
 import Card from './card'
 import {browserHistory} from 'react-router'
-import PRODUCT_DATABASE from './database'
+import axios from 'axios'
 
 export default class ProductList extends React.Component{
     constructor(props){
         super(props)
+        this.state={}
+    }
+
+    componentDidMount(){
+        axios.get('/products')
+        .then((r) => {
+            this.setState({
+                products: r.data.products
+            })
+        })
     }
 
     cardPressed(productId){
@@ -17,14 +27,26 @@ export default class ProductList extends React.Component{
 
 
     render(){
-        return(
-            <div>
-              {
-                  PRODUCT_DATABASE.map((item, index) => {
-                      return <Card key={index} cardPressed={this.cardPressed(item.id)} product={item} />
-                  })
-              }
-            </div>
-        )
+        if(!this.state.products){
+            return null
+        }
+        else{
+            return(
+                <div className='cards_container'>
+                    {this.state.products.map(prod => {
+                        return (
+                                <div>
+                                    <div onClick={this.cardPressed(prod.id)} className='card_container'>
+                                        <img src={prod.image} />
+                                        <h2>{prod.brand}</h2>
+                                        <p>{prod.price}€</p>
+                                    </div>
+                            </div>
+                        )
+                    })}
+                </div>
+            )
+        }
+
     }
 }
