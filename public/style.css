@@ -4,10 +4,149 @@
 
 body{
     margin: 0 auto;
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 
+#footer{
+    background-color: #1D2731;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    text-align: center;
+}
+
+#footer p{
+    font-family: 'Cormorant Garamond', serif;
+    padding-left: 10px;
+    float: left;
+    color: white;
+    font-size: 11px;
+}
+
+
+
+#home{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    background-color: floralWhite;
+}
+
+#welcome-c h1{
+    overflow-x: hidden;
+    background-color: #1D2731;
+    height: 60px;
+    text-align: center;
+    top: 0;
+    left: 0;
+    border-bottom: black;
+    margin: 0;
+}
+
+#welcome-cc .logo{
+    position: absolute;
+    width: auto;
+    height: 400px;
+    float: left;
+    margin: 0 auto;
+    padding-bottom: 325px;
+    margin-left: 30px;
+}
+
+#welcome-cc .to-login {
+    text-decoration: none;
+    font-size: 17px;
+    float: right;
+    color: white;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-top: 20px;
+    letter-spacing: 0.5px;
+}
+
+#welcome-cc .to-login:hover{
+    -webkit-font-smoothing: antialiased;
+}
+
+.header{
+    display: block;
+    text-align: center;
+    background: url("./images/Michael-Schwartz.jpg") no-repeat top center fixed;
+    height: 500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    color: black;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(30%);
+    margin-bottom: 50px;
+}
+
+
+.discover{
+    position: relative;
+    top: 355px;
+    height: 45px;
+    width: 140px;
+    font-size: 15px;
+    border: 0;
+    background-color: white;
+    margin: 0 auto;
+}
+
+
+
+
+.discover:hover{
+    background-color: #1D2731;
+    color: white;
+}
+
+.header1{
+    background: url("./images/background.jpg") no-repeat;
+    background-size: contain;
+    height: 400px;
+    width: 300px;
+    margin: 0 auto;
+    padding: 0;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(40%);
+    margin-bottom: 50px;
+    display: inline-block;
+}
+
+.header2{
+    display: inline-block;
+    background: url("./images/892ff5177fe16d51fc7d6ecff8f73dd8.jpg") no-repeat;
+    background-size: contain;
+    height: 400px;
+    width: 300px;
+    margin: 0 auto;
+    margin-left: 100px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(40%);
+    margin-bottom: 50px;
+}
+
+
+.content{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/*REGISTER PAGE*/
 .register_container{
     display: block;
     text-align: center;
@@ -31,7 +170,7 @@ body{
     margin: auto;
     margin-bottom: 15px;
     width: 300px;
-    border: solid thin pink;
+    border: solid thin grey;
     border-radius: 5px;
     font-size: 15px;
     line-height: 25px;
@@ -48,53 +187,69 @@ button{
     cursor: pointer;
 }
 
+/*LOGIN PAGE */
+#loginbody{
+    background: url('./images/hanger.jpeg')  no-repeat top center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.loginbody{
+    background-color: rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+#login-c{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
 #login button:hover{
-    border-bottom: solid 2px #E0BDC2;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 9px;
+}
+
+#login button{
+    border: solid 1px black;
+    border-radius: 9px;
 }
 
 #login{
-    display: block;
+    border-radius: 9px;
+    display:block;
+    margin: 0 auto;
+    height: 300px;
+    width: 500px;
+    border: solid 1px black;
+    background:rgba(255,255,255, 0.6);
+    z-index: 99999;
     text-align: center;
-    margin: auto;
 }
+
 
 #login .login_text{
-    margin-top: 40px;
+    margin-top: 35px;
     background-color: transparent;
-    border: none;
+    border: 0;
 }
-
-#welcome-c h1{
-    background-color: floralWhite;
-    height: 70px;
-    text-align: center;
-    top: 0;
-    left: 0;
-    border-bottom: solid 1px #E0BDC2;
-    margin: 0;
-}
-
-
-#welcome-cc .logo{
-    width: 180px;
-    height: auto;
-    float: left;
-    margin: 0 auto;
-    margin-top: -15px;
-    margin-left: 20px;
-}
-
 
 /*Header Elements*/
 
 #header{
-    background-color: floralWhite;
+    background-color: #1D2731;
     height: 65px;
+    width: 100%;
     text-align: center;
     top: 0;
     left: 0;
     border-bottom: solid 1px #E0BDC2;
 }
+
 
 .header_elements{
     display: block;
@@ -122,14 +277,13 @@ button{
 }
 
 .header_elements .logo{
-    width: 180px;
-    height: auto;
+    position: relative;
+    width: auto;
+    height: 400px;
     float: left;
     margin: 0 auto;
-    margin-top: -15px;
-    margin-left: 20px;
+    padding-bottom: 325px;
 }
-
 
 
 #header li:hover{
@@ -147,14 +301,13 @@ button{
 
 /*Cards main page*/
 .card_container{
-
     border-radius: 10px;
-    border: solid 4px #E0BDC2;
+    border: solid 2px floralWhite;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 60px;
     cursor: pointer;
 }
 

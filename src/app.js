@@ -15,13 +15,14 @@ export default class App extends React.Component{
     render(){
         const clonedChildren = React.cloneElement(
             this.props.children, {
-                image: "balloons"
+
             }
         )
         return(
             <div>
                 <MuiThemeProvider>
                     <div>
+                    <div className='line'> </div>
                         <div id='header'>
                             <div className='header_elements'>
                                 <Logo />
@@ -29,6 +30,7 @@ export default class App extends React.Component{
                                 <Wishlist />
                             </div>
                         </div>
+
                         {clonedChildren}
                     </div>
                 </MuiThemeProvider>

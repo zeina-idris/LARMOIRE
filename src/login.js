@@ -25,13 +25,20 @@ export default class Login extends React.Component{
     }
     render() {
         return(
-            <div id='login'>
-            {this.state.error && <p style={{color:"red"}}>Something went wrong</p>}
-                <h1 className='login_text'>Log in</h1>
-                <input className='input' type='email' ref='email' placeholder='Email' />
-                <input className='input' type='password' ref='password' placeholder='Password' />
-                <button  onClick={() => this.submit()}>LOG IN</button>
-                <h3> Not a member? Sign up <Link to="/">here</Link></h3>
+            <div id='loginbody'>
+            <div className='loginbody'>
+                <div id='login-c'>
+                    <div id='login'>
+                    {this.state.error && <p style={{color:"red"}}>Something went wrong</p>}
+                        <h1 className='login_text'>Log in</h1>
+                        <input className='input' type='email' ref='email' placeholder='Email' />
+                        <input className='input' type='password' ref='password' placeholder='Password' />
+                        <button  onClick={() => this.submit()}>LOG IN</button>
+                        <h3> If you're not a member already, Join us!</h3>
+                        <Link className='login-signup' to="/register">SIGN UP</Link>
+                    </div>
+                </div>
+            </div>
             </div>
         )
     }

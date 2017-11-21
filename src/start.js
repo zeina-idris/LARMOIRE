@@ -8,12 +8,14 @@ import Login from './login'
 import SingleProductView from './SingleProductView'
 import UploadProduct from './uploadProduct'
 import ProductList from './productList'
+import Home from './home'
 
 const notLoggedIn = (
     <Router history={hashHistory}>
     <Route path="/" component={Welcome}>
         <Route path="/login" component={Login} />
-            <IndexRoute component={Register} />
+            <Route path="/register" component={Register} />
+            <IndexRoute component={Home} />
         </Route>
     </Router>
 )

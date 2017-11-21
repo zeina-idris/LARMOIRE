@@ -123,6 +123,7 @@ app.post('/login', function(req, res) {
 
 
 app.get('/welcome', (req, res) => {
+    console.log('inside /welcome', req.session);
     if (req.session.user) {
         res.redirect('/')
     } else {
@@ -189,7 +190,12 @@ app.get('/logout', (req, res) =>{
 })
 
 app.get('*', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    console.log('inside the * route', req.session.user);
+    if (!req.session.user) {
+        res.redirect('/welcome')
+    } else {
+        res.sendFile(__dirname + '/index.html')
+    }
 });
 
 
