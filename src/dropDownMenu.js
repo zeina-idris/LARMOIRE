@@ -35,8 +35,6 @@ export default class MyDropDownMenu extends React.Component {
           <MenuItem value={1} primaryText="Menu"/>
           <MenuItem value={2} primaryText="Lend a product"
           containerElement={<Link to='/uploadProduct' className='upload_img'>Lend a Product</Link>} />
-          <MenuItem value={3} primaryText="Contact"
-          containerElement={<a href='/Contact'> </a>}/>
           <MenuItem value={4} primaryText="Log out"
           containerElement={<a href='/logout'> </a>}/>
         </DropDownMenu>

@@ -4,16 +4,14 @@ const compression = require('compression');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session')
 const multer = require('multer')
+const bcrypt = require('./bcrypt.js')
+const knox = require('knox');
 const sendToS3 = require('./toS3').toS3;
 const spicedPg = require('spiced-pg')
 const path = require('path')
 const uidSafe = require('uid-safe')
 const db = spicedPg(process.env.DATABASE_URL || 'postgres:postgres:postgres@localhost:5432/fashionUsers');
-const bcrypt = require('./bcrypt.js')
 
-
-// const server = require('http').Server(app);
-// const io = require('socket.io')(server);
 
 //Configuration
 
@@ -165,8 +163,8 @@ app.post('/uploadSingleProduct', uploader.single('file'), (req, res) => {
         sendToS3(req.file)
         .then(() => {
             console.log(req.file.filename);
-             const q = 'INSERT INTO products (image, userId, brand, price) VALUES ($1, $2, $3, $4);'
-             const params = [req.file.filename, req.body.userId , req.body.brand, req.body.price]
+             const q = `INSERT INTO products (image, brand, price) VALUES ($1, $2, $3, $4);`
+             const params = [req.file.filename , req.body.brand, req.body.price]
              return db.query(q, params)
              .then(() => {
                  res.json({
@@ -175,6 +173,7 @@ app.post('/uploadSingleProduct', uploader.single('file'), (req, res) => {
              })
         }).catch((err) => {
             console.log(err);
+            res.json({success: false})
         })
     } else {
         res.json({
@@ -182,6 +181,22 @@ app.post('/uploadSingleProduct', uploader.single('file'), (req, res) => {
         });
     }
 });
+
+app.post('/messages', (req, res) =>{
+    const q = `INSERT INTO messages (sender_id, recipient_id, content, product_id, created_at) VALUES ($1, $2, $3, $4, $5)`
+    const params = [req.body.sender_id, req.body.recipient_id, req.body.conetnt, req.body.product_id, req.body.created_at]
+    db.query(q, params)
+    .then((result) => {
+        res.json({
+            success: true
+        })
+    })
+    .catch((err) =>{
+        res.json({
+            success: false
+        })
+    })
+})
 
 
 app.get('/logout', (req, res) =>{

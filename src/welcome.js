@@ -10,9 +10,10 @@ export default class Welcome extends React.Component{
         return(
             <div id="welcome-c">
                 <div id="welcome-cc">
-                <Logo />
-                    <h1>
-                        <Link className='to-login' to='/login'>Sign in</Link>
+                    <h1 className='welcome-h'>
+                    <Logo />
+                        <Link className='to-login' to='/login'>SIGN IN</Link>
+                        <Link className='to-register' to='/register'>SIGN UP</Link>
                     </h1>
                     {this.props.children}
                     <Footer />

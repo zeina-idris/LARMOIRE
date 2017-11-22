@@ -6,7 +6,7 @@ import MenuItem from 'material-ui/MenuItem';
 import MyDropDownMenu from './dropDownMenu'
 import {Link} from 'react-router'
 import Logo from './logo'
-import Wishlist from './wishlist'
+
 
 export default class App extends React.Component{
     constructor(props){
@@ -27,7 +27,6 @@ export default class App extends React.Component{
                             <div className='header_elements'>
                                 <Logo />
                                 <MyDropDownMenu />
-                                <Wishlist />
                             </div>
                         </div>
 
@@ -39,6 +38,3 @@ export default class App extends React.Component{
     }
 
 }
-
-
-// <ProductList />

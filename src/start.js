@@ -26,6 +26,7 @@ const loggedIn = (
             <IndexRoute component={ProductList} />
             <Route path='/products/:id' component={SingleProductView} />
             <Route path='/uploadProduct' component={UploadProduct} />
+
         </Route>
     </Router>
 )

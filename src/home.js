@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 export default class Home extends React.Component{
     constructor(props){
@@ -11,10 +12,16 @@ export default class Home extends React.Component{
                 <div className="header">
                 <button className='discover'>SHOP NOW</button>
                 </div>
-
                 <div className="header1">
                 </div>
                 <div className="header2">
+                </div>
+                <br></br>
+                <div className="header3">
+                </div>
+                <div className="header4">
+                </div>
+                <div className="header5">
                 </div>
             </div>
         )

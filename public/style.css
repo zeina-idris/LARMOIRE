@@ -1,4 +1,4 @@
-*{
+    *{
     box-sizing: border-box;
 }
 
@@ -9,7 +9,7 @@ body{
 
 
 #footer{
-    background-color: #1D2731;
+    background: rgba(0, 0, 0, 0.3);
     position: fixed;
     right: 0;
     bottom: 0;
@@ -35,53 +35,82 @@ body{
     background-color: floralWhite;
 }
 
-#welcome-c h1{
-    overflow-x: hidden;
-    background-color: #1D2731;
-    height: 60px;
+
+#welcome-cc .welcome-h{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
     text-align: center;
     top: 0;
     left: 0;
-    border-bottom: black;
-    margin: 0;
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+#welcome-cc a{
+    text-decoration: none;
 }
 
 #welcome-cc .logo{
-    position: absolute;
-    width: auto;
-    height: 400px;
-    float: left;
+    text-decoration: none;
+    width: 250px;
+    font-size: 40px;
     margin: 0 auto;
-    padding-bottom: 325px;
-    margin-left: 30px;
+    color: black;
+    text-align: center;
+    background-color: none;
 }
 
+
 #welcome-cc .to-login {
+    position: relative;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 15px;
     float: right;
-    color: white;
-    margin: 0 auto;
-    padding-right: 20px;
-    padding-top: 20px;
+    color: black;
     letter-spacing: 0.5px;
+    margin-top: -25px;
+    padding-right: 20px;
+
 }
+
+#welcome-cc .to-register{
+    text-decoration: none;
+    font-size: 15px;
+    float: right;
+    color: black;
+    margin-right: 90px;
+    padding-right: 10px;
+    letter-spacing: 0.5px;
+    border-right: solid thin black;
+    cursor: pointer;
+    margin-top: -25px;
+
+}
+
 
 #welcome-cc .to-login:hover{
     -webkit-font-smoothing: antialiased;
+
 }
+
+#welcome-cc .to-register:hover{
+    -webkit-font-smoothing: antialiased;
+}
+
 
 .header{
     display: block;
     text-align: center;
-    background: url("./images/Michael-Schwartz.jpg") no-repeat top center fixed;
-    height: 500px;
+    background: url("./images/Magdalena-Jasek-and-Louise-Parker-by-Yelena-Yemchuk (1).jpg") no-repeat top center fixed;
+    background-size: cover;
+    height: 600px;
     width: 100%;
     margin: 0 auto;
     padding: 0;
     color: black;
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(30%);
     margin-bottom: 50px;
 }
 
@@ -90,18 +119,18 @@ body{
     position: relative;
     top: 355px;
     height: 45px;
-    width: 140px;
+    width: 170px;
     font-size: 15px;
     border: 0;
     background-color: white;
     margin: 0 auto;
+    margin-top: 100px;
 }
 
 
 
-
 .discover:hover{
-    background-color: #1D2731;
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
 }
 
@@ -131,6 +160,43 @@ body{
     margin-bottom: 50px;
 }
 
+.header3{
+    background: url("./images/168b6cd2772dd81ad47602cd75c2900e.jpg") no-repeat;
+    background-size: contain;
+    height: 400px;
+    width: 300px;
+    margin: 0 auto;
+    padding: 0;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(40%);
+    margin-bottom: 50px;
+    display: inline-block;
+}
+
+.header4{
+    display: inline-block;
+    background: url("./images/9c9ac4bba385781a11e9ec88957c3bdd.jpg") no-repeat;
+    background-size: contain;
+    height: 400px;
+    width: 300px;
+    margin: 0 auto;
+    margin-left: 100px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(40%);
+    margin-bottom: 50px;
+}
+.header5{
+    display: inline-block;
+    background: url("./images/dc82077f83ef90186a299b2433e740c7.jpg") no-repeat;
+    background-size: contain;
+    height: 400px;
+    width: 300px;
+    margin: 0 auto;
+    margin-left: 100px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(40%);
+    margin-bottom: 50px;
+}
 
 .content{
     width: 100%;
@@ -151,11 +217,23 @@ body{
     display: block;
     text-align: center;
     margin: auto;
-    margin-top: 40px;
+    padding-top: 120px;
 }
 
-.reg-btn:hover{
-    border-bottom: solid 2px #E0BDC2;
+.register{
+    border-radius: 9px;
+    display:block;
+    margin: 0 auto;
+    height: 350px;
+    width: 500px;
+    border: solid 1px black;
+    background:rgba(255,255,255, 0.6);
+    z-index: 99999;
+    text-align: center;
+}
+
+.register_container .signup-title{
+    font-size: 25px;
 }
 
 
@@ -179,23 +257,29 @@ body{
 }
 
 button{
-    border: none;
     background-color: transparent;
-    margin: 0 auto;
-    padding: auto;
-    width: 100px;
+    border: solid 1px black;
+    border-radius: 9px;
     cursor: pointer;
+    width: 100px;
+    margin: 0 auto;
+}
+
+button:hover{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 9px;
 }
 
 /*LOGIN PAGE */
 #loginbody{
-    background: url('./images/hanger.jpeg')  no-repeat top center fixed;
+    background: url('./images/photo-1490707967831-1fd9b48e40e2.jpeg')  no-repeat top center fixed;
     background-size: cover;
     height: 100vh;
 }
 
 .loginbody{
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
     background-size: cover;
     height: 100vh;
     width: 100%;
@@ -205,7 +289,7 @@ button{
     display: block;
     text-align: center;
     margin: 0 auto;
-    padding-top: 100px;
+    padding-top: 170px;
 }
 
 #login button:hover{
@@ -215,8 +299,10 @@ button{
 }
 
 #login button{
+    background-color: transparent;
     border: solid 1px black;
     border-radius: 9px;
+    cursor: pointer;
 }
 
 #login{
@@ -233,7 +319,6 @@ button{
 
 
 #login .login_text{
-    margin-top: 35px;
     background-color: transparent;
     border: 0;
 }
@@ -241,79 +326,58 @@ button{
 /*Header Elements*/
 
 #header{
-    background-color: #1D2731;
-    height: 65px;
-    width: 100%;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: solid 1px grey;
     text-align: center;
     top: 0;
     left: 0;
-    border-bottom: solid 1px #E0BDC2;
-}
-
-
-.header_elements{
-    display: block;
-}
-
-.wishlist{
     display: inline-block;
-    position: relative;
-    left: 28%;
-    width: 220px;
-    height: auto;
+    width: 100%;
+    height: 75px;
+    padding: 0;
     margin: 0 auto;
-    object-fit: cover;
-    margin-top: -50px;
-    background-color: transparent;
 }
 
-.wishlist:hover{
-    cursor:pointer;
-}
+
 
 .header_elements .dropDownMenu{
     float: right;
-    margin-right: 20px;
-}
-
-.header_elements .logo{
-    position: relative;
-    width: auto;
-    height: 400px;
-    float: left;
     margin: 0 auto;
-    padding-bottom: 325px;
+    margin-top: -35px;
 }
 
-
-#header li:hover{
-    -webkit-font-smoothing: antialiased;
-}
-
-#header a:hover{
-    -webkit-font-smoothing: antialiased;
-}
 
 .upload_img{
     height: 15px;
 }
 
+.header_elements a{
+    text-decoration: none;
+}
 
+.header_elements .logo{
+    text-decoration: none;
+    width: 250px;
+    font-size: 40px;
+    margin: 0 auto;
+    color: black;
+    text-align: center;
+    background-color: none;
+}
 /*Cards main page*/
 .card_container{
-    border-radius: 10px;
-    border: solid 2px floralWhite;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 140px;
     cursor: pointer;
 }
 
 .card_container img{
     width: 300px;
-    height: 400px;
+    height: 250px;
     object-fit: cover;
     text-align: center;
 }
@@ -322,9 +386,15 @@ button{
     padding: 20px;
     display: inline-flex;
     justify-content: space-between;
-    font-size: 15px;
+    font-size: 20px;
     width: 400px;
     height: 600px;
+}
+
+.pinfo{
+    border-bottom: solid thin lightgrey;
+    border-right: solid thin lightgrey;
+    border-left: solid thin lightgrey;
 }
 
 /*SINGLE PAGE VIEW*/
@@ -334,7 +404,8 @@ button{
     width: 900px;
     margin: 0 auto;
     height: auto;
-    margin-bottom: 90px;
+    margin-top: 130px;
+    margin-bottom: 100px;
 
 }
 .SPV img{
@@ -352,25 +423,46 @@ button{
     width: 600px;
 }
 
+.messageButton{
+    padding-bottom: 5px;
+}
+
+.hide{
+    visibility: hidden;
+}
 
 /*upload an image view*/
 .main-upload-c{
-    margin-top: 50px;
     display: block;
     text-align: center;
     margin:  0 auto;
+    padding-top: 200px;
 }
 
-.upload-c{
-    margin-top: 40px;
+#uploadbody{
+    background: url('./images/upload.jpeg')  no-repeat top center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.upload-c {
+    border-radius: 9px;
+    display:block;
+    margin: 0 auto;
+    height: 300px;
+    width: 500px;
+    border: solid 1px grey;
+    background:rgba(255,255,255, 0.6);
+    z-index: 99999;
+    text-align: center;
 }
 
 .upload-c input{
     display: flex;
-    margin: auto;
+    margin: 0 auto;
     margin-bottom: 15px;
     width: 300px;
-    border: solid thin pink;
+    border: solid thin grey;
     border-radius: 5px;
     font-size: 15px;
     line-height: 30px;
@@ -380,14 +472,12 @@ button{
 
 .upload-c .upload-btn{
     cursor: pointer;
-    background-color: #EFC6C9;
+    background-color: transparent;
     height: 25px;
     font-size: 15px;
     border-radius: 5px;
 }
 
 .upload-c .upload-btn:hover{
-    background-color: transparent;
-    border-bottom: solid 2px #E0BDC2;
-    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.2);
 }

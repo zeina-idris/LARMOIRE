@@ -1,10 +1,16 @@
 import React from 'react'
 import axios from 'axios'
+import MessagePopUp from './messagePopUp'
 
 export default class SingleProductView extends React.Component{
     constructor(props) {
         super(props)
-        this.state={}
+        this.state = {
+            messagesHidden: true,
+            product: null
+        }
+
+        this.toggleMessageView = this.toggleMessageView.bind(this)
     }
 
     componentDidMount(){
@@ -16,9 +22,15 @@ export default class SingleProductView extends React.Component{
         })
     }
 
+    toggleMessageView(){
+        this.setState({
+            messagesHidden: false
+        })
+    }
+
     render(){
         if(!this.state.product){
-            return null
+            return(<div></div>)
         }
         return(
             <div>
@@ -27,7 +39,11 @@ export default class SingleProductView extends React.Component{
                     <div className='SPV_info'>
                         <h3>{this.state.product.brand} </h3>
                         <p>{this.state.product.price}€ </p>
+                        <button onClick={this.toggleMessageView} className='messageButton'>Send a message</button>
                     </div>
+                    <MessagePopUp
+                        isHidden={this.state.messagesHidden}
+                    />
                 </div>
             </div>
         )

@@ -38,8 +38,10 @@ export default class ProductList extends React.Component{
                                 <div>
                                     <div onClick={this.cardPressed(prod.id)} className='card_container'>
                                         <img src={prod.image} />
-                                        <h2>{prod.brand}</h2>
+                                        <div className='pinfo'>
+                                        <h3>{prod.brand}</h3>
                                         <p>{prod.price}€</p>
+                                        </div>
                                     </div>
                             </div>
                         )
@@ -50,3 +52,7 @@ export default class ProductList extends React.Component{
 
     }
 }
+
+<div className='pinfo'>
+
+</div>

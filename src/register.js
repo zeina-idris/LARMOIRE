@@ -26,19 +26,25 @@ export default class Register extends React.Component {
     }
     render() {
         return (
-            <div  className="register_container">
-            {this.state.error && <p style={{color:"red"}}>Something went wrong</p>}
-            <div className='inputs_container'>
-                <h3 className='signup-title'>Become a member</h3>
-                <input className='input' type='text' ref='first' placeholder='First name' />
-                <input className='input' type='text' ref='last' placeholder='Last name' />
-                <input className='input' type='email' ref='email' placeholder='Email' />
-                <input className='input' type='password' ref='password' placeholder='Password' />
-                <button className='reg-btn' onClick={() => this.submit()}>SIGN UP</button>
+            <div id='loginbody'>
+            <div className='loginbody'>
+                <div  className="register_container">
+                    <div  className="register">
+                {this.state.error && <p style={{color:"red"}}>Something went wrong</p>}
+                <div className='inputs_container'>
+                    <h3 className='signup-title'>Become a member</h3>
+                    <input className='input' type='text' ref='first' placeholder='First name' />
+                    <input className='input' type='text' ref='last' placeholder='Last name' />
+                    <input className='input' type='email' ref='email' placeholder='Email' />
+                    <input className='input' type='password' ref='password' placeholder='Password' />
+                    <button className='reg-btn' onClick={() => this.submit()}>SIGN UP</button>
 
+                    </div>
+
+                    <h3>Already a member? Please <Link to="/login">log in</Link></h3>
                 </div>
-
-                <h3>Already a member? Please <Link to="/login">log in</Link></h3>
+                </div>
+            </div>
             </div>
         )
     }

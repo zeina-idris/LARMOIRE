@@ -23,18 +23,21 @@ export default class UploadProduct extends React.Component{
     }
 
     render(){
-        console.log('rendering upload product');
         return (
-            <div className='main-upload-c'>
-                <div className="upload-c">
-                    <h2>Rent a Product</h2>
-                    <h3>Upload product image</h3>
-                    <label className="upload-btn" htmlFor="file"></label>
-                    <input type="text" name="brand" placeholder="Brand" />
-                    <input type="text" name="price" placeholder="0.00€" />
-                    <input type='file' id='file' />
-                    <button onClick={this.handleSubmit} className="upload-btn">Save</button>
+            <div id='uploadbody'>
+            <div className='loginbody'>
+                <div className='main-upload-c'>
+                    <div className="upload-c">
+                        <h2>Rent a Product</h2>
+                        <h3>Upload product image</h3>
+                        <label className="upload-btn" htmlFor="file"></label>
+                        <input type="text" name="brand" placeholder="Brand" />
+                        <input type="text" name="price" placeholder="0.00€" />
+                        <input type='file' id='file' />
+                        <button onClick={this.handleSubmit} className="upload-btn">Upload</button>
+                    </div>
                 </div>
+            </div>
             </div>
         );
     }
