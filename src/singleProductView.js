@@ -42,6 +42,7 @@ export default class SingleProductView extends React.Component{
                         <button onClick={this.toggleMessageView} className='messageButton'>Send a message</button>
                     </div>
                     <MessagePopUp
+                        product={this.state.product}
                         isHidden={this.state.messagesHidden}
                     />
                 </div>

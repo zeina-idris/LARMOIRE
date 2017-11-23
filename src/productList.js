@@ -35,7 +35,7 @@ export default class ProductList extends React.Component{
                 <div className='cards_container'>
                     {this.state.products.map(prod => {
                         return (
-                                <div>
+                                <div key={prod.id} >
                                     <div onClick={this.cardPressed(prod.id)} className='card_container'>
                                         <img src={prod.image} />
                                         <div className='pinfo'>

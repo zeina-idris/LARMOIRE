@@ -25,5 +25,6 @@ CREATE TABLE messages(
     recipient_id INTEGER NOT NULL,
     content TEXT NOT NULL,
     product_id INTEGER NOT NULL,
+    status BOOLEAN DEFAULT false,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

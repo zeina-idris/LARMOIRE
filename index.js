@@ -26,6 +26,7 @@ app.use(cookieSession({
     maxAge: 1000 * 60 * 60 * 24 * 14
 }));
 
+
 var diskStorage = multer.diskStorage({
     destination: function(req, file, callback) {
         callback(null, __dirname + '/uploads');
@@ -44,7 +45,6 @@ var uploader = multer({
     }
 });
 
-app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(bodyParser.json())
 
@@ -144,7 +144,8 @@ app.get('/products', (req, res) => {
 })
 
 app.get('/product/:id', (req, res) => {
-    const q = `SELECT image, userId, brand, price FROM products WHERE id = $1`
+    console.log(req.body);
+    const q = `SELECT image, userId, brand, price, id FROM products WHERE id = $1`
     const params = [req.params.id]
     db.query(q, params)
     .then((result) => {
@@ -182,9 +183,10 @@ app.post('/uploadSingleProduct', uploader.single('file'), (req, res) => {
     }
 });
 
-app.post('/messages', (req, res) =>{
-    const q = `INSERT INTO messages (sender_id, recipient_id, content, product_id, created_at) VALUES ($1, $2, $3, $4, $5)`
-    const params = [req.body.sender_id, req.body.recipient_id, req.body.conetnt, req.body.product_id, req.body.created_at]
+app.post('/messages', (req, res) => {
+    console.log(req.body);
+    const q = `INSERT INTO messages (sender_id, recipient_id, content, product_id) VALUES ($1, $2, $3, $4)`
+    const params = [req.session.user.id, req.body.recipient_id, req.body.content, req.body.product_id]
     db.query(q, params)
     .then((result) => {
         res.json({
@@ -192,11 +194,13 @@ app.post('/messages', (req, res) =>{
         })
     })
     .catch((err) =>{
+        console.log(err);
         res.json({
             success: false
         })
     })
 })
+
 
 
 app.get('/logout', (req, res) =>{
