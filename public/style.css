@@ -651,28 +651,107 @@ button:hover{
     background-color: rgba(255, 255, 255, 0.9);
 }
 
-
-
-.individual_msg{
-    background-color: rgba(255, 255, 255, 0.7);
-    margin-top: -11px;
-    padding: 10px;
-    height: 50px;
-}
-
-
 .in:last-of-type{
     border-bottom: none;
 }
 
-.individual_msg:hover{
+a{
+    text-decoration: none;
+}
+
+#individual{
+    height: 70px;
+    font-size: 15px;
+    border: solid 1px lightgrey;
+    padding: 15px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+#name{
+    font-size: 23px;
+    color: black;
+    margin-top: -15px;
+}
+
+#message{
+    color: black;
+    margin-bottom: 10px;
+}
+
+
+
+#individual:hover{
     background-color: rgba(0, 0, 0, 0.1);
+    height: 70px;
     cursor: pointer;
 }
 
 .inboxtext{
     font-size: 30px;
     width: 100%;
-    padding-top: 10px;
     height: 60px;
+}
+
+/*SINGLE MESSAGE*/
+#single_msg{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 120px;
+    padding-bottom:  50px;
+}
+
+#single_msg textarea{
+    text-align: center;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    top: 49px;
+    border-radius: 6px;
+    resize: none;
+    height: 35px;
+    width: 900px;
+    border: solid thin lightgrey;
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+}
+
+#chat-container{
+    text-align: center;
+    position: relative;
+    border-radius: 5px;
+    top: 50px;
+    margin: auto;
+    border: solid 1px lightgrey;
+    height: 400px;
+    width: 900px;
+    overflow-y: scroll;
+    background-blend-mode: overlay;
+}
+
+
+.sender{
+    font-size: 30px;
+    padding-left: -150px;
+    border-bottom: solid thin lightgrey;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.messageContent{
+    font-size: 20px;
+    height: auto;
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+    background-color: #437E6C;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    -webkit-font-smoothing: antialiased;
 }

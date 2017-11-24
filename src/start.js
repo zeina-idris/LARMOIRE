@@ -10,6 +10,7 @@ import UploadProduct from './uploadProduct'
 import ProductList from './productList'
 import Home from './home'
 import Inbox from './inbox'
+import SingleMessage from './singleMessage'
 
 const notLoggedIn = (
     <Router history={hashHistory}>
@@ -28,6 +29,7 @@ const loggedIn = (
             <Route path='/products/:id' component={SingleProductView} />
             <Route path='/uploadProduct' component={UploadProduct} />
             <Route path='/inbox' component={Inbox} />
+            <Route path='/message/:id' component={SingleMessage} />
         </Route>
     </Router>
 )

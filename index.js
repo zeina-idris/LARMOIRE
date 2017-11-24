@@ -209,7 +209,7 @@ app.post('/messages', (req, res) => {
 
 
 app.get('/messages', (req, res) => {
-    const q = `SELECT 	messages.id,
+    const q = `SELECT messages.id,
 		messages.product_id,
 		users.first,
 		users.last,
@@ -234,6 +234,35 @@ app.get('/messages', (req, res) => {
     })
 })
 
+
+app.get('/message/:id/data', (req, res) =>{
+    const q = `SELECT messages.id,
+		messages.product_id,
+		users.first,
+		users.last,
+		messages.content
+        FROM messages
+        JOIN users
+        ON messages.sender_id = users.id
+        WHERE messages.recipient_id = $1
+        AND messages.id = $2`
+
+    const params= [req.session.user.id, req.params.id]
+
+    db.query(q, params)
+    .then((result)  => {
+        res.json({
+            message: result.rows[0],
+            success: true
+        })
+    })
+    .catch((err)=>{
+        console.log(err);
+        res.json({
+            success: false
+        })
+    })
+})
 
 app.get('/logout', (req, res) =>{
     req.session = null;

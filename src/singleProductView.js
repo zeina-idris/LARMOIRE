@@ -39,7 +39,7 @@ export default class SingleProductView extends React.Component{
                     <img src={this.state.product.image} />
                     <div className='SPV_info'>
                         <h3>{this.state.product.brand} </h3>
-                        <p>{this.state.product.price}€ </p>
+                        <p>{this.state.product.price}€ per day</p>
                         <a  onClick={this.toggleMessageView} className='messageButton' href="#openModal">Send a message</a>
                     </div>
 

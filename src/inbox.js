@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router'
 
 export default class Inbox extends React.Component{
     constructor(props){
@@ -28,11 +29,15 @@ export default class Inbox extends React.Component{
                 </div>
             )
         }
-        // const messages = this.state
         const theMsgs = this.state.messages.map((message) =>{
             return(
                 <div key={message.id}>
-                    <h1  className='individual_msg'>{message.content}</h1>
+                    <div id='individual'>
+                    <a href={`/message/${message.id}`}>
+                    <p id='name'>{message.first} {message.last}: </p>
+                            <p id='message'>{message.content}</p>
+                        </a>
+                    </div>
                 </div>
             )
         })
