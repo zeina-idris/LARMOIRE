@@ -38,7 +38,9 @@ export default class MyDropDownMenu extends React.Component {
           <MenuItem value={4} primaryText="Log out"
           containerElement={<a href='/logout'> </a>}/>
         </DropDownMenu>
-
+        <Link to='/inbox'>
+            <img className='inbox_icon' src='/public/images/inbox.png' />
+        </Link>
 
       </div>
     );

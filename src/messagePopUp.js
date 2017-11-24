@@ -21,13 +21,25 @@ export default class MessagePopUp extends React.Component{
             content: message,
             recipient_id: this.props.product.userid
         })
+
       }
     }
 
     render(){
         return(
             <div className={this.visibilityClass()}>
-            <textarea id="chat-message" placeholder="Type a message..." onKeyPress={(e) => this.handleKeyPress(e)}></textarea>
+            <div>
+                <div id="openModal" className="modalDialog">
+                    <div>
+                    	<a href="#close" title="Close" className="close">X</a>
+                        <p className='modalText'>Send a message</p>
+                        <p>Send a message to the owner of this product
+                        to get more information </p>
+                        <textarea id="chat-message" placeholder="Type a message..." onKeyPress={(e) => this.handleKeyPress(e)}></textarea><br></br>
+                        <button className='sendBtn'>Send message</button>
+                    </div>
+                </div>
+            </div>
             </div>
         )
     }

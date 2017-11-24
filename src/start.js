@@ -9,6 +9,7 @@ import SingleProductView from './SingleProductView'
 import UploadProduct from './uploadProduct'
 import ProductList from './productList'
 import Home from './home'
+import Inbox from './inbox'
 
 const notLoggedIn = (
     <Router history={hashHistory}>
@@ -26,7 +27,7 @@ const loggedIn = (
             <IndexRoute component={ProductList} />
             <Route path='/products/:id' component={SingleProductView} />
             <Route path='/uploadProduct' component={UploadProduct} />
-
+            <Route path='/inbox' component={Inbox} />
         </Route>
     </Router>
 )

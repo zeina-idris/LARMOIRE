@@ -4,8 +4,10 @@
 
 body{
     margin: 0 auto;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Quicksand', sans-serif;
 }
+
+
 
 
 #footer{
@@ -32,13 +34,13 @@ body{
     display: block;
     text-align: center;
     margin: 0 auto;
-    background-color: floralWhite;
+    background-color: #f6e6dc;
 }
 
 
 #welcome-cc .welcome-h{
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
     text-align: center;
     top: 0;
     left: 0;
@@ -61,6 +63,8 @@ body{
     color: black;
     text-align: center;
     background-color: none;
+    padding-top: 5px;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 
@@ -71,7 +75,7 @@ body{
     float: right;
     color: black;
     letter-spacing: 0.5px;
-    margin-top: -25px;
+    margin-top: -35px;
     padding-right: 20px;
 
 }
@@ -86,7 +90,7 @@ body{
     letter-spacing: 0.5px;
     border-right: solid thin black;
     cursor: pointer;
-    margin-top: -25px;
+    margin-top: -35px;
 
 }
 
@@ -117,22 +121,24 @@ body{
 
 .discover{
     position: relative;
-    top: 355px;
-    height: 45px;
-    width: 170px;
-    font-size: 15px;
+    top: 250px;
+    height: 50px;
+    width: 200px;
+    font-size: 16px;
     border: 0;
     background-color: white;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 230px;
 }
 
 
 
-.discover:hover{
+a .discover:hover{
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
 }
+
+
 
 .header1{
     background: url("./images/background.jpg") no-repeat;
@@ -146,6 +152,9 @@ body{
     margin-bottom: 50px;
     display: inline-block;
 }
+
+
+
 
 .header2{
     display: inline-block;
@@ -217,16 +226,16 @@ body{
     display: block;
     text-align: center;
     margin: auto;
-    padding-top: 120px;
+    padding-top: 200px;
 }
 
 .register{
-    border-radius: 9px;
+    border-radius: 5px;
     display:block;
     margin: 0 auto;
     height: 350px;
     width: 500px;
-    border: solid 1px black;
+    border: solid 1px lightgrey;
     background:rgba(255,255,255, 0.6);
     z-index: 99999;
     text-align: center;
@@ -248,7 +257,7 @@ body{
     margin: auto;
     margin-bottom: 15px;
     width: 300px;
-    border: solid thin grey;
+    border: solid thin lightgrey;
     border-radius: 5px;
     font-size: 15px;
     line-height: 25px;
@@ -289,7 +298,7 @@ button:hover{
     display: block;
     text-align: center;
     margin: 0 auto;
-    padding-top: 170px;
+    padding-top: 200px;
 }
 
 #login button:hover{
@@ -306,12 +315,12 @@ button:hover{
 }
 
 #login{
-    border-radius: 9px;
+    border-radius: 5px;
     display:block;
     margin: 0 auto;
     height: 300px;
     width: 500px;
-    border: solid 1px black;
+    border: solid 1px lightgrey;
     background:rgba(255,255,255, 0.6);
     z-index: 99999;
     text-align: center;
@@ -327,8 +336,7 @@ button:hover{
 
 #header{
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-bottom: solid 1px grey;
+    background-color: rgba(255, 255, 255, 0.4);
     text-align: center;
     top: 0;
     left: 0;
@@ -344,7 +352,16 @@ button:hover{
 .header_elements .dropDownMenu{
     float: right;
     margin: 0 auto;
-    margin-top: -35px;
+    margin-top: -45px;
+}
+
+.inbox_icon{
+    width: 35px;
+    height: 35px;
+    float: right;
+    margin: 0 auto;
+    margin-top: -30px;
+    margin-right: 30px;
 }
 
 
@@ -364,67 +381,105 @@ button:hover{
     color: black;
     text-align: center;
     background-color: none;
+    padding-top: 10px;
+    font-family: 'Cormorant Garamond', serif;
 }
+
+
 /*Cards main page*/
+
+.cards_container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    margin: 0 auto;
+}
+
 .card_container{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     text-align: center;
     margin-top: 140px;
     cursor: pointer;
+    margin-right: 40px;
+    margin-left: 40px;
 }
 
 .card_container img{
     width: 300px;
-    height: 250px;
+    height: 320px;
     object-fit: cover;
     text-align: center;
-}
-
-.cards_container{
-    padding: 20px;
-    display: inline-flex;
-    justify-content: space-between;
-    font-size: 20px;
-    width: 400px;
-    height: 600px;
+    border: solid 1px lightgrey;
 }
 
 .pinfo{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    margin-top: -18px;
     border-bottom: solid thin lightgrey;
     border-right: solid thin lightgrey;
     border-left: solid thin lightgrey;
 }
 
 /*SINGLE PAGE VIEW*/
+
+#SPV_container{
+    background-color: #f6e6dc;
+    height: 100vh;
+}
+
+
+.SPVbody{
+    padding-top: 130px;
+
+}
+
 .SPV{
     display: block;
     text-align: center;
-    width: 900px;
+    width: 400px;
     margin: 0 auto;
-    height: auto;
-    margin-top: 130px;
-    margin-bottom: 100px;
-
+    height: 573px;
+    margin-bottom: 20px;
+    border-top: solid 1px lightgrey;
+    border-right: solid 1px lightgrey;
+    border-left: solid 1px lightgrey;
+    background-color: rgba(255, 255, 255, 0.5);
 }
+
+
 .SPV img{
     margin-top: 20px;
     border-radius: 5px;
-    width: 600px;
-    height: 500px;
-    object-fit: cover;
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
 }
 
 .SPV_info{
     margin: 0 auto;
-    border: solid 1px pink;
+    border-bottom: solid 1px lightgrey;
+    border-top: solid 1px lightgrey;
     border-radius: 5px;
-    width: 600px;
+    width: 400px;
+    height: 150px;
+
 }
 
 .messageButton{
-    padding-bottom: 5px;
+    border-radius: 5px;
+    border: solid 1px grey;
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+
+}
+
+.messageButton:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
 .hide{
@@ -445,13 +500,17 @@ button:hover{
     height: 100vh;
 }
 
+#header #uploadbody{
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
 .upload-c {
-    border-radius: 9px;
+    border-radius: 5px;
     display:block;
     margin: 0 auto;
     height: 300px;
     width: 500px;
-    border: solid 1px grey;
+    border: solid 1px lightgrey;
     background:rgba(255,255,255, 0.6);
     z-index: 99999;
     text-align: center;
@@ -462,7 +521,7 @@ button:hover{
     margin: 0 auto;
     margin-bottom: 15px;
     width: 300px;
-    border: solid thin grey;
+    border: solid thin lightgrey;
     border-radius: 5px;
     font-size: 15px;
     line-height: 30px;
@@ -480,4 +539,140 @@ button:hover{
 
 .upload-c .upload-btn:hover{
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+/*MESSAGE POP UP VIEW*/
+
+.modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 19px;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    width: 500px;
+    height: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    background: #fff;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.modalText{
+    border-bottom: solid thin lightgrey;
+    padding-bottom: 10px;
+}
+
+.close {
+    background: black;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.close:hover {
+    background: #00d9ff;
+}
+
+#chat-message{
+    resize: none;
+    height: 150px;
+    width: 350px;
+    font-size: 15px;
+}
+
+.sendBtn{
+    border: solid 1px lightgrey;
+    margin-top: 10px;
+    padding: 5px;
+    width: 150px;
+    font-size: 15px;
+}
+
+/*INBOX*/
+
+#inboxbody{
+    background: url('./images/photo-1462392246754-28dfa2df8e6b.jpeg');
+    background-size: cover;
+    height: 100vh;
+}
+
+.inboxbody{
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+
+.main-inbox-c{
+    display: block;
+    text-align: center;
+    margin:  0 auto;
+    padding-top: 170px;
+}
+
+.messagesContainer{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border: solid 1px grey;
+    height: 400px;
+    width: 600px;
+    overflow-y: scroll;
+    font-size: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+
+.individual_msg{
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: -11px;
+    padding: 10px;
+    height: 50px;
+}
+
+
+.in:last-of-type{
+    border-bottom: none;
+}
+
+.individual_msg:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.inboxtext{
+    font-size: 30px;
+    width: 100%;
+    padding-top: 10px;
+    height: 60px;
 }

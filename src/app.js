@@ -22,7 +22,6 @@ export default class App extends React.Component{
             <div>
                 <MuiThemeProvider>
                     <div>
-                    <div className='line'> </div>
                         <div id='header'>
                             <div className='header_elements'>
                                 <Logo />

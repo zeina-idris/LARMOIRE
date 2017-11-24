@@ -9,6 +9,7 @@ const knox = require('knox');
 const sendToS3 = require('./toS3').toS3;
 const spicedPg = require('spiced-pg')
 const path = require('path')
+const config = require('./config')
 const uidSafe = require('uid-safe')
 const db = spicedPg(process.env.DATABASE_URL || 'postgres:postgres:postgres@localhost:5432/fashionUsers');
 
@@ -134,6 +135,9 @@ app.get('/products', (req, res) => {
     const q = `SELECT * FROM products ORDER BY created_at DESC`
     db.query(q)
     .then((result) => {
+        result.rows.forEach(function(row){
+            row.image = config.s3Url + row.image
+        })
         res.json({
             products: result.rows
         })
@@ -149,6 +153,7 @@ app.get('/product/:id', (req, res) => {
     const params = [req.params.id]
     db.query(q, params)
     .then((result) => {
+        result.rows[0].image = config.s3Url + result.rows[0].image
         res.json({
             product: result.rows[0]
         })
@@ -163,12 +168,13 @@ app.post('/uploadSingleProduct', uploader.single('file'), (req, res) => {
     if (req.file) {
         sendToS3(req.file)
         .then(() => {
-            console.log(req.file.filename);
-             const q = `INSERT INTO products (image, brand, price) VALUES ($1, $2, $3, $4);`
-             const params = [req.file.filename , req.body.brand, req.body.price]
+            console.log(req.body);
+             const q = `INSERT INTO products (image, brand, price, userid) VALUES ($1, $2, $3, $4);`
+             const params = [req.file.filename , req.body.brand, req.body.price, req.session.user.id]
              return db.query(q, params)
              .then(() => {
                  res.json({
+
                     success: true
                  });
              })
@@ -201,6 +207,32 @@ app.post('/messages', (req, res) => {
     })
 })
 
+
+app.get('/messages', (req, res) => {
+    const q = `SELECT 	messages.id,
+		messages.product_id,
+		users.first,
+		users.last,
+		messages.content
+        FROM messages
+        JOIN users
+        ON messages.sender_id = users.id
+        WHERE messages.recipient_id = $1`
+    const params = [req.session.user.id]
+    db.query(q, params)
+    .then((result) => {
+        console.log(result.rows);
+        res.json({
+            messages: result.rows,
+            success: true
+        })
+    })
+    .catch((err) =>{
+        res.json({
+            success: false
+        })
+    })
+})
 
 
 app.get('/logout', (req, res) =>{

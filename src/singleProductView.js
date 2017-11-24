@@ -33,18 +33,21 @@ export default class SingleProductView extends React.Component{
             return(<div></div>)
         }
         return(
-            <div>
+            <div id='SPV_container'>
+                <div className='SPVbody'>
                 <div className='SPV'>
                     <img src={this.state.product.image} />
                     <div className='SPV_info'>
                         <h3>{this.state.product.brand} </h3>
                         <p>{this.state.product.price}€ </p>
-                        <button onClick={this.toggleMessageView} className='messageButton'>Send a message</button>
+                        <a  onClick={this.toggleMessageView} className='messageButton' href="#openModal">Send a message</a>
                     </div>
+
                     <MessagePopUp
                         product={this.state.product}
                         isHidden={this.state.messagesHidden}
                     />
+                </div>
                 </div>
             </div>
         )

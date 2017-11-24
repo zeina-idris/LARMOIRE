@@ -10,7 +10,7 @@ export default class Home extends React.Component{
         return(
             <div id='home'>
                 <div className="header">
-                <button className='discover'>SHOP NOW</button>
+                <button className='discover'><Link to='/login'>SHOP NOW</Link></button>
                 </div>
                 <div className="header1">
                 </div>

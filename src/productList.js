@@ -25,7 +25,6 @@ export default class ProductList extends React.Component{
         }
     }
 
-
     render(){
         if(!this.state.products){
             return null
@@ -35,12 +34,12 @@ export default class ProductList extends React.Component{
                 <div className='cards_container'>
                     {this.state.products.map(prod => {
                         return (
-                                <div key={prod.id} >
-                                    <div onClick={this.cardPressed(prod.id)} className='card_container'>
+                                <div  className='card_container' key={prod.id} >
+                                    <div onClick={this.cardPressed(prod.id)} >
                                         <img src={prod.image} />
                                         <div className='pinfo'>
                                         <h3>{prod.brand}</h3>
-                                        <p>{prod.price}€</p>
+                                        <p>{prod.price} € per day</p>
                                         </div>
                                     </div>
                             </div>
