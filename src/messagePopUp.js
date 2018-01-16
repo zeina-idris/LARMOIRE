@@ -11,18 +11,17 @@ export default class MessagePopUp extends React.Component{
         return this.props.isHidden  ? 'hide' : ''
     }
 
-    handleKeyPress(e) {
-      if (e.key === 'Enter') {
-        let message = e.target.value
-        e.target.value = "";
-            console.log(this.props.product);
+    onChange(e) {
+        this.newMessage = e.target.value
+    }
+
+    submit(){
         axios.post('/messages', {
             product_id: this.props.product.id,
-            content: message,
-            recipient_id: this.props.product.userid
+            content: this.newMessage,
+            recipient_id: this.props.product.user_id
         })
-
-      }
+        this.props.hideMessageView()
     }
 
     render(){
@@ -35,8 +34,8 @@ export default class MessagePopUp extends React.Component{
                         <p className='modalText'>Send a message</p>
                         <p>Send a message to the owner of this product
                         to get more information </p>
-                        <textarea id="chat-message" placeholder="Type a message..." onKeyPress={(e) => this.handleKeyPress(e)}></textarea><br></br>
-                        <button className='sendBtn'>Send message</button>
+                        <textarea id="chat-message" placeholder="Type a message..." onChange={(e) => this.onChange(e)}></textarea><br></br>
+                        <button  onClick={() => this.submit()} className='sendBtn'>Send message</button>
                     </div>
                 </div>
             </div>

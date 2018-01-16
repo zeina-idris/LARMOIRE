@@ -132,12 +132,16 @@ app.get('/welcome', (req, res) => {
 
 
 app.get('/products', (req, res) => {
-    const q = `SELECT * FROM products ORDER BY created_at DESC`
+    const q = `SELECT first, last, products.image, products.user_id, brand, price, products.id  FROM products
+    JOIN users
+    ON products.user_id = users.id
+    ORDER BY created_at DESC;`
     db.query(q)
     .then((result) => {
         result.rows.forEach(function(row){
             row.image = config.s3Url + row.image
         })
+        console.log('my results', result.rows);
         res.json({
             products: result.rows
         })
@@ -149,7 +153,7 @@ app.get('/products', (req, res) => {
 
 app.get('/product/:id', (req, res) => {
     console.log(req.body);
-    const q = `SELECT image, userId, brand, price, id FROM products WHERE id = $1`
+    const q = `SELECT image, user_id, brand, price, id FROM products WHERE id = $1`
     const params = [req.params.id]
     db.query(q, params)
     .then((result) => {
@@ -169,7 +173,7 @@ app.post('/uploadSingleProduct', uploader.single('file'), (req, res) => {
         sendToS3(req.file)
         .then(() => {
             console.log(req.body);
-             const q = `INSERT INTO products (image, brand, price, userid) VALUES ($1, $2, $3, $4);`
+             const q = `INSERT INTO products (image, brand, price, user_id) VALUES ($1, $2, $3, $4);`
              const params = [req.file.filename , req.body.brand, req.body.price, req.session.user.id]
              return db.query(q, params)
              .then(() => {
@@ -237,6 +241,7 @@ app.get('/messages', (req, res) => {
 
 app.get('/message/:id/data', (req, res) =>{
     const q = `SELECT messages.id,
+        messages.sender_id,
 		messages.product_id,
 		users.first,
 		users.last,

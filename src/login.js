@@ -34,7 +34,7 @@ export default class Login extends React.Component{
                         <input className='input' type='email' ref='email' placeholder='Email' />
                         <input className='input' type='password' ref='password' placeholder='Password' />
                         <button  onClick={() => this.submit()}>LOG IN</button>
-                        <h3> If you're not a member already, Join us!</h3>
+                        <h3> Not a member?, Join us!</h3>
                         <Link className='login-signup' to="/register">SIGN UP</Link>
                     </div>
                 </div>

@@ -30,6 +30,7 @@ export default class Inbox extends React.Component{
             )
         }
         const theMsgs = this.state.messages.map((message) =>{
+            console.log(message);
             return(
                 <div key={message.id}>
                     <div id='individual'>

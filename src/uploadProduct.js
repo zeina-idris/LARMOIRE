@@ -33,7 +33,7 @@ export default class UploadProduct extends React.Component{
             <div className='loginbody'>
                 <div className='main-upload-c'>
                     <div className="upload-c">
-                        <h2>Rent a Product</h2>
+                        <h2>Lend a Product</h2>
                         <h3>Upload product image</h3>
                         <label className="upload-btn" htmlFor="file"></label>
                         <input onChange={(e) => this.handleChange(e)} type="text" name="brand" placeholder="Brand" />
